@@ -1,11 +1,11 @@
-package fullAnnotation_test;
+package bean_lifecyle;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("bean_lifecycle")
+@ComponentScan("bean_lifecyle")
 
 public class AppConfig {
 	

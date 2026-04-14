@@ -13,5 +13,6 @@
 	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/spring-core-7.0.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/spring-expression-7.0.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/spring-jcl-6.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/jakarta.annotation-api-1.3.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
