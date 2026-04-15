@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.context.annotation.Scope;
 
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class Car {
 	Engine engine;
 	
