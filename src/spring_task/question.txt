@@ -1,0 +1,12 @@
+Task 1 — College with Professor & Department Injection
+Objective: Inject multiple objects into College using annotations.
+Classes Design:
+• Professor → name, subject
+• Department → deptName, building
+• College → collegeName, Professor, Department
+Where to use Annotations:
+• @Component on Professor, Department, College
+• @Autowired inside College for Professor and Department
+• @Configuration + @ComponentScan in AppConfig
+Expected Output:
+College: ABC Engineering College Professor: Rajesh (Java) Department: CSE - Block A
