@@ -6,12 +6,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class College {
     private String collegeName = "ABC Engineering College";
-
-    @Autowired
     private Professor professor;
+    private Department department;
 
     @Autowired
-    private Department department;
+    public College(Professor professor, Department department) {
+        this.professor = professor;
+        this.department = department;
+    }
 
     public void displayDetails() {
         System.out.println("College: " + collegeName + 
