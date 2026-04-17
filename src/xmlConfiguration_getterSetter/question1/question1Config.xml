@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="deptBean" class="xmlConfiguration_getterSetter.question1.Department">
+		<property name="deptName" value="Commerce">
+		</property>
+	</bean>							
+	<bean id="empBean" class="xmlConfiguration_getterSetter.question1.Employee">
+		<constructor-arg name="name" value="Rajesh"/>
+		<constructor-arg name="dept" ref="deptBean"/>
+		<constructor-arg name="salary" value="2000.0"/>
+	</bean>
+</beans>
