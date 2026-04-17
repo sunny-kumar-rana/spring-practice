@@ -1,0 +1,21 @@
+Q1. Constructor + Setter + Object + Order Trap
+
+Create:
+
+Department
+deptName (String)
+Employee
+name (String)
+dept (Department)
+salary (double)
+
+Constraints:
+
+name → constructor injection
+dept → constructor injection
+salary → setter injection
+
+⚠️ Trap:
+
+Constructor has (String name, Department dept)
+You must wire correctly using XML
