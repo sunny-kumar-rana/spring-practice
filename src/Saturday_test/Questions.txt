@@ -1,0 +1,97 @@
+
+
+Ques 01 — Online Shopping Cart System.
+
+Project Overview
+-----------------
+Develop a Spring Core application to manage shopping cart details using setter injection.
+
+Classes
+-------
+Product: productId, name, price
+Cart: cartId, userName, product (dependency)
+
+System Description
+------------------
+The cart holds product details which are injected using setter methods configured in XML.
+
+Real-Time Scenario
+-------------------
+Used in e-commerce applications where users add products to cart dynamically.
+
+Expected Output
+---------------
+Display cart and product details
+
+Ques 02 — Employee Project Allocation System.
+
+Project Overview
+----------------
+
+Create a Spring Core application to assign projects to employees using setter injection.
+
+Classes
+--------
+Project: projectId, projectName
+Employee: empId, name, project (dependency)
+
+System Description
+------------------
+Project details are injected into employee objects dynamically using setter injection configured in XML.
+
+Real-Time Scenario
+-------------------
+Used in IT companies to allocate projects to employees.
+
+Expected Output
+----------------
+Display employee and project details
+
+
+Ques 03 — College Course Allocation System.
+
+Project Overview
+----------------
+Develop a Spring Core application to assign courses to faculty using constructor injection configured in XML.
+
+Classes
+-------
+Course: courseId, courseName
+Faculty: facultyId, name, course (dependency)
+
+System Description
+------------------
+Course details are injected into faculty objects at creation time.
+
+Real-Time Scenario
+------------------
+Used in college management systems to allocate courses to faculty members.
+
+Expected Output
+---------------
+Display faculty and course details
+
+
+Ques 04 - Online Ticket Booking System.
+
+Project Overview
+----------------
+
+Build a Spring Core application to manage ticket booking using constructor injection configured in XML.
+
+Classes
+-------
+Ticket: ticketId, source, destination
+Passenger: passengerId, name, ticket (dependency)
+
+System Description
+------------------
+Ticket details are injected into passenger objects during object creation.
+
+Real-Time Scenario
+------------------
+Used in travel booking systems for managing passenger tickets.
+
+Expected Output
+---------------
+Display passenger and ticket details
