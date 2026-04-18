@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ticket" class="Saturday_test.question4.Ticket">
+        <constructor-arg value="301"/>
+        <constructor-arg value="Hyderabad"/>
+        <constructor-arg value="Chennai"/>
+    </bean>
+
+    <bean id="passenger" class="Saturday_test.question4.Passenger">
+        <constructor-arg value="50"/>
+        <constructor-arg value="Rahul"/>
+        <constructor-arg ref="ticket"/>
+    </bean>
+
+</beans>
