@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="project" class="Saturday_test.question2.Project">
+        <property name="projectId" value="101"/>
+        <property name="projectName" value="AI System"/>
+    </bean>
+
+    <bean id="employee" class="Saturday_test.question2.Employee">
+        <property name="empId" value="1"/>
+        <property name="name" value="John"/>
+        <property name="project" ref="project"/>
+    </bean>
+
+</beans>
