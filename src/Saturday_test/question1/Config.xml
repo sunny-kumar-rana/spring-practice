@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="product" class="Saturday_test.question1.Product">
+        <property name="productId" value="1001"/>
+        <property name="name" value="Laptop"/>
+        <property name="price" value="75000"/>
+    </bean>
+
+    <bean id="cart" class="Saturday_test.question1.Cart">
+        <property name="cartId" value="1"/>
+        <property name="userName" value="Alice"/>
+        <property name="product" ref="product"/>
+    </bean>
+
+</beans>
