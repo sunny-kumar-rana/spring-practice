@@ -1,0 +1,50 @@
+2. Ride Sharing System 🚖🚲🚙
+==============================
+Problem Statement:
+
+You are designing a Ride Sharing System where users can book different types of vehicles (Car, Bike, Auto) and each ride can use different Payment Methods (Cash, Wallet, Card).
+
+You must design the system with interfaces, implementations, and Spring DI with @Qualifier.
+
+Requirements:
+Interfaces:
+
+Vehicle → String ride()
+
+PaymentMethod → String pay(double amount)
+
+Implementations (Vehicle):
+
+Car → "Car ride started"
+
+Bike → "Bike ride started"
+
+Auto → "Auto ride started"
+
+Implementations (Payment Method):
+
+CashPayment → "Paid <amount> in Cash"
+
+WalletPayment → "Paid <amount> using Wallet"
+
+CardPayment → "Paid <amount> using Card"
+
+Business Rules:
+
+Car uses CardPayment
+
+Bike uses WalletPayment
+
+Auto uses CashPayment
+
+Controller:
+
+RideController with methods:
+
+bookCar(double amount)
+
+bookBike(double amount)
+
+bookAuto(double amount)
+
+Each method prints ride + payment.
