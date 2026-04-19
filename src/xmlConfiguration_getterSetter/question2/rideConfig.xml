@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<bean id="carObj" class="xmlConfiguration_getterSetter.question2.Car"></bean>
+		<bean id="bikeObj" class="xmlConfiguration_getterSetter.question2.Bike"></bean>
+		<bean id="autoObj" class="xmlConfiguration_getterSetter.question2.Auto"></bean>
+		
+		
+		<bean id="cardPayment" class="xmlConfiguration_getterSetter.question2.CardPayment"></bean>
+		<bean id="walletPayment" class="xmlConfiguration_getterSetter.question2.WalletPayment"></bean>
+		<bean id="cashPayment" class="xmlConfiguration_getterSetter.question2.CashPayment"></bean>
+		
+		<bean id="carController" class="xmlConfiguration_getterSetter.question2.RideController">
+			<constructor-arg index="0" ref="carObj"></constructor-arg>
+			<constructor-arg index="1" ref="cardPayment"></constructor-arg>
+		</bean>
+		<bean id="bikeController" class="xmlConfiguration_getterSetter.question2.RideController">
+			<constructor-arg index="0" ref="bikeObj"></constructor-arg>
+			<constructor-arg index="1" ref="walletPayment"></constructor-arg>
+		</bean>
+		<bean id="autoController" class="xmlConfiguration_getterSetter.question2.RideController">
+			<constructor-arg index="0" ref="autoObj"></constructor-arg>
+			<constructor-arg index="1" ref="cashPayment"></constructor-arg>
+		</bean>
+</beans>
