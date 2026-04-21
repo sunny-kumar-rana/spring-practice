@@ -10,15 +10,14 @@ import customerOrders.modal.Product;
 
 @Component
 public class InventoryService {
-	Map<Integer, Product> productsMap;
+	Map<Long, Product> productsMap;
 	
 	public InventoryService() {
 		productsMap = new HashMap<>();
 	}
 	
-	@Autowired
-	public void addProduct(Product product, Integer quantity) {
-		productsMap.put(quantity, product);
+	public void addProduct(Product product) {
+		productsMap.put(product.getId(), product);
 	}
 	
 	

@@ -9,13 +9,5 @@ import customerOrders.modal.Product;
 @Configuration
 @ComponentScan("customerOrders")
 public class AppConfig {
-	@Bean
-	public Product product() {
-		return new Product(123, "balloon", 230);
-	}
-	
-	@Bean
-	public Integer quantity() {
-		return 3;
-	}
+
 }

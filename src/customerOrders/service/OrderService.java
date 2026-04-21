@@ -10,7 +10,6 @@ public class OrderService {
 	InventoryService inventoryService;
 	PaymentService paymentService;
 	
-	@Autowired
 	public OrderService( InventoryService inventoryService, PaymentService paymentService) {
 		this.inventoryService = inventoryService;
 		this.paymentService = paymentService;
