@@ -17,12 +17,42 @@ public class NotificationDispatcher {
 	}
 	
 	public void dispatch(Message message, NotificationType type) {
-		NotificationService service = services.get(type.name());
+		NotificationService service = services.get(type.getBeanName());
 		
 		if(service == null) {
 			throw new RuntimeException("invalid notification type");
 		}
 		
-		service.send(message);
+		
+		try {
+			
+			service.send(message);			
+			
+		} catch (Exception e) {
+			
+			
+			NotificationType next = type.next();
+			if(next == null) {
+				throw new RuntimeException("All Notification methods failed");
+			}
+			
+			dispatch(message, next);
+			return;
+			
+			
+//			---------------OR---------------
+//			if (type == NotificationType.EMAIL){
+//				dispatch(message, NotificationType.SMS);
+//				return;
+//			}
+//			else if (type == NotificationType.SMS){
+//				dispatch(message, NotificationType.PUSH);
+//				return;
+//			}
+//			else {
+//				throw new RuntimeException("All Notification methods failed");
+//			}
+//			
+		}
 	}
 }
