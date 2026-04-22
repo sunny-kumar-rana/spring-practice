@@ -16,8 +16,8 @@ public class NotificationDispatcher {
 		this.services = services;
 	}
 	
-	public void dispatch(Message message, String type) {
-		NotificationService service = services.get(type + "NotificationService");
+	public void dispatch(Message message, NotificationType type) {
+		NotificationService service = services.get(type.name());
 		
 		if(service == null) {
 			throw new RuntimeException("invalid notification type");

@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import customerOrders.springConfig.AppConfig;
 import notificationSystem.dispatcher.NotificationDispatcher;
+import notificationSystem.dispatcher.NotificationType;
 import notificationSystem.model.Message;
 
 public class Main {
@@ -13,7 +14,7 @@ public class Main {
 		
 		NotificationDispatcher dispatcher = context.getBean(NotificationDispatcher.class);
 		
-		dispatcher.dispatch(new Message(121, " hello there. wassup?", "suresh"), "email");
+		dispatcher.dispatch(new Message(121, " hello there. wassup?", "suresh"), NotificationType.EMAIL);
 		
 	}
 }
