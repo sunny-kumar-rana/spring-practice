@@ -18,29 +18,27 @@ public class TaskDispatcher {
 	
 	public void execute(Task task) {
 		
-		TaskType taskType = task.getTaskType();
-		TaskExecutor te = executorList.get(taskType.name());
 		
-		if(te == null) {
-			
-			throw new RuntimeException("invalid Task type / all methods failed");
-			
+	}
+	
+	public void executeWithType(Task task, TaskType taskType) {
+		TaskExecutor tx = executorList.get(taskType.name());
+		
+		if(tx == null) {
+			throw new RuntimeException("Invalid type");
 		}
 		
 		try {
-			
-			te.execute(task);
-			
+			tx.execute(task);
 		} catch (Exception e) {
-
-			task.setTaskType(taskType.next());
 			
-			execute(task);
+			TaskType next = taskType.next();
 			
-		} finally {
+			if(next== null) {
+				throw new RuntimeException("All Methods Failed");
+			}
 			
-			task.setTaskType(taskType);
-			
+			executeWithType(task, next);
 		}
 	}
 }
