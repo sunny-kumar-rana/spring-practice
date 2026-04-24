@@ -1,44 +1,48 @@
 package taskExecutionSystem.dispatcher;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
 import taskExecutionSystem.executors.TaskExecutor;
 import taskExecutionSystem.model.Task;
-import taskExecutionSystem.model.TaskType;
 
 @Component
 public class TaskDispatcher {
-	private Map<String, TaskExecutor> executorList;
+	private Map<String, List<TaskExecutor>> executorGroup;
 	
 	public TaskDispatcher(Map<String, TaskExecutor> executorList) {
-		this.executorList = executorList;
+		
+		executorGroup = new HashMap<>();
+		
+		for(Map.Entry<String, TaskExecutor> entry : executorList.entrySet()) {
+			executorGroup.computeIfAbsent(entry.getValue().getCategory(), k -> new ArrayList<>()).add(entry.getValue());
+		}
 	}
 	
 	public void execute(Task task) {
 		
+		String category = task.getTaskType().getCategory();
 		
-	}
-	
-	public void executeWithType(Task task, TaskType taskType) {
-		TaskExecutor tx = executorList.get(taskType.name());
+		List<TaskExecutor> executors = executorGroup.get(category);
 		
-		if(tx == null) {
-			throw new RuntimeException("Invalid type");
+		if(executors == null) {
+			throw new RuntimeException("No Executors found");
 		}
 		
-		try {
-			tx.execute(task);
-		} catch (Exception e) {
-			
-			TaskType next = taskType.next();
-			
-			if(next== null) {
-				throw new RuntimeException("All Methods Failed");
+		for(TaskExecutor executor : executors) {
+			try {
+				executor.execute(task);
+				return;
+			} catch (Exception e) {
+				// blank
 			}
-			
-			executeWithType(task, next);
 		}
+		
+		throw new RuntimeException("All Methods failed");
+		
 	}
 }
