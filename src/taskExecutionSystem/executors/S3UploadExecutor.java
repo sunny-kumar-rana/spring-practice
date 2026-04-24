@@ -11,5 +11,10 @@ public class S3UploadExecutor implements TaskExecutor {
 	public void execute(Task task) {
 		System.out.println(task.getTaskType().name() + " :-- " +task.getPayload());
 	}
+	
+	@Override
+	public String getCategory() {
+		return "fileUpload";
+	}
 
 }

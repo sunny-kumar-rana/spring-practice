@@ -12,4 +12,8 @@ public class LocalUploadExecutor implements TaskExecutor {
 		System.out.println(task.getTaskType().name() + " :-- " +task.getPayload());
 	}
 
+	@Override
+	public String getCategory() {
+		return "fileUpload";
+	}
 }
