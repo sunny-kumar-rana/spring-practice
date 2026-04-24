@@ -14,6 +14,6 @@ public class Main {
 		
 		TaskDispatcher dispatcher = context.getBean(TaskDispatcher.class);
 		
-		dispatcher.execute(new Task(3450, TaskType.LOCAL_UPLOAD, "i suppose it works yeah?"));
+		dispatcher.execute(new Task(TaskType.LOCAL_UPLOAD, "i suppose it works yeah?"));
 	}
 }
