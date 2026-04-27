@@ -14,5 +14,7 @@
 	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/spring-expression-7.0.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/spring-jcl-6.2.17.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/jakarta.annotation-api-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/aspectjrt-1.9.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Superior/Documents/Spring-Essential-jars/aspectjweaver-1.9.19.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
