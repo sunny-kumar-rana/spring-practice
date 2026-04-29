@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import learnFactoryBean.engine.Engine;
 
-@Component("engine")
+//@Component("engine")
 public class EngineFactoryBean implements FactoryBean<Engine>{
 
 	@Override
